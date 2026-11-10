@@ -345,7 +345,9 @@ parts:
       - libudev1
       - libuuid1
       - zlib1g
-      - liblz4-1
+      # liblz4-1 is NOT staged: it is provided by the core26 base, and a
+      # bundled copy would shadow the base's copy (which receives security
+      # updates that this snap's copy would not)
       - libxt6t64
     prime:
       - -usr/lib/*/libgio*
